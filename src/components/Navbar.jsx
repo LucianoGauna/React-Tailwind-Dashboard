@@ -4,7 +4,7 @@ import { IoMdSettings, IoMdNotifications } from 'react-icons/io';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({toggleSidebar}) => {
   const [activeMenu, setActiveMenu] = useState(false);
   const location = useLocation();
 
@@ -22,6 +22,7 @@ const Navbar = () => {
   function handleMenu() {
     setActiveMenu(!activeMenu);
   }
+
   return (
     <nav className="w-full max-w-full bg-transparent py-1">
       <div className="flex flex-col-reverse justify-between md:items-center gap-6 md:flex-row">
@@ -44,7 +45,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex gap-5 text-md sm:text-lg text-gray-400">
-            <button className="lg:hidden" onClick={handleMenu}>
+            <button className="lg:hidden" onClick={toggleSidebar}>
               <HiOutlineMenu />
             </button>
             <a href="#">

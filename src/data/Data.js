@@ -303,3 +303,29 @@ export const NOTIFICATIONS = [
     state: "bg-[#ec4899]"
   }
 ];
+
+export const ALERTS_WITH_ICONS = [{
+  id: 1,
+  description: 'This is a notification with icon',
+  state: "bg-[#ef4444]"
+},
+{
+  id: 2,
+  description: 'This is a notification with icon',
+  state: "bg-[#eab308]"
+},
+{
+  id: 3,
+  description: 'This is a notification with icon',
+  state: "bg-[#22c55e]"
+},
+{
+  id: 4,
+  description: 'This is a notification with icon',
+  state: "bg-[#3b82f6]"
+},
+{
+  id: 5,
+  description: 'This is just a notification',
+  state: "bg-[#ec4899]"
+}]

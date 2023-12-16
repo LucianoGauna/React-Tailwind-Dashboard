@@ -1,12 +1,17 @@
-import { IoClose } from 'react-icons/io5';
-import { NOTIFICATIONS } from '../data/Data';
+import { IoClose, IoAlertCircleOutline } from 'react-icons/io5';
+import { ALERTS_WITH_ICONS, NOTIFICATIONS } from '../data/Data';
 import { useState } from 'react';
 
 const Notifications = () => {
   const [notifications, setNotifications] = useState(NOTIFICATIONS);
+  const [alertsWithIcons, setAlertsWithIcons] = useState(ALERTS_WITH_ICONS);
 
-  function handleDelete(id) {
+  function handleDeleteNotification(id) {
     setNotifications(notifications.filter(item => item.id !== id));
+  }
+
+  function handleDeleteAlert(id) {
+    setAlertsWithIcons(alertsWithIcons.filter(item => item.id !== id));
   }
 
   return (
@@ -23,7 +28,7 @@ const Notifications = () => {
             <p className="text-white font-medium">{item.description}</p>
             <IoClose
               className="text-white text-xl cursor-pointer"
-              onClick={() => handleDelete(item.id)}
+              onClick={() => handleDeleteNotification(item.id)}
             />
           </div>
         ))}
@@ -32,18 +37,21 @@ const Notifications = () => {
         <div className="w-full">
           <h3 className="text-2xl font-semibold mb-4">Alerts with Icons</h3>
         </div>
-        {/* {notifications.map(item => (
+        {alertsWithIcons.map(item => (
           <div
             key={item.id}
-            className={`w-full bg-[${item.state}] px-4 py-2 rounded-md flex justify-between items-center mb-4`}
+            className={`w-full ${item.state} px-4 py-2 rounded-md flex justify-between items-center mb-4`}
           >
-            <p className="text-white font-medium">{item.description}</p>
+            <div className='flex items-center gap-2'>
+              <IoAlertCircleOutline  className="text-white text-xl"/>
+              <p className="text-white font-medium">{item.description}</p>
+            </div>
             <IoClose
               className="text-white text-xl cursor-pointer"
-              onClick={() => handleDelete(item.id)}
+              onClick={() => handleDeleteAlert(item.id)}
             />
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );
