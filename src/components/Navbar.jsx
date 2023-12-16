@@ -7,19 +7,17 @@ import { useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(false);
   const location = useLocation();
-console.log(location.pathname);
 
   function capitalizeFirstLetter(string) {
-    if(string === ""){
-      string = "Home"
-    } else if(string === "signIn") {
-      string = "Sign In"
-    } else if(string === "signUp") {
-      string = "Sign Up"
+    if (string === '') {
+      string = 'Home';
+    } else if (string === 'signIn') {
+      string = 'Sign In';
+    } else if (string === 'signUp') {
+      string = 'Sign Up';
     }
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
 
   function handleMenu() {
     setActiveMenu(!activeMenu);
@@ -31,7 +29,9 @@ console.log(location.pathname);
           <a href="#" className="text-gray-400 text-md">
             Dashboard / {capitalizeFirstLetter(location.pathname.slice(1))}
           </a>
-          <strong className="block">{capitalizeFirstLetter(location.pathname.slice(1))}</strong>
+          <strong className="block">
+            {capitalizeFirstLetter(location.pathname.slice(1))}
+          </strong>
         </div>
         <div className="flex items-center justify-between">
           <div className="mr-auto sm:mr-4 sm:w-56">

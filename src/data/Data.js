@@ -275,3 +275,31 @@ export const ORDERS = [
     date: '14 DEC 11.23 PM',
   },
 ];
+
+export const NOTIFICATIONS = [
+  {
+    id: 1,
+    description: 'This is just a notification',
+    state: "bg-[#ef4444]"
+  },
+  {
+    id: 2,
+    description: 'This is just a notification',
+    state: "bg-[#eab308]"
+  },
+  {
+    id: 3,
+    description: 'This is just a notification',
+    state: "bg-[#22c55e]"
+  },
+  {
+    id: 4,
+    description: 'This is just a notification',
+    state: "bg-[#3b82f6]"
+  },
+  {
+    id: 5,
+    description: 'This is just a notification',
+    state: "bg-[#ec4899]"
+  }
+];
