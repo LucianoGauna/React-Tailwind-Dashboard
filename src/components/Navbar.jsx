@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Navbar = ({toggleSidebar}) => {
-  const [activeMenu, setActiveMenu] = useState(false);
   const location = useLocation();
 
   function capitalizeFirstLetter(string) {
@@ -19,9 +18,6 @@ const Navbar = ({toggleSidebar}) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  function handleMenu() {
-    setActiveMenu(!activeMenu);
-  }
 
   return (
     <nav className="w-full max-w-full bg-transparent py-1">
